@@ -1,0 +1,13 @@
+.friendContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+}
+
+.friendsListHeading {
+  text-align: center;
+}
+
+.buttonContainer {
+  
+}
