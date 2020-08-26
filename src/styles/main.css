@@ -1,0 +1,87 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 2000px;
+}
+
+.header {
+    border: 2px black solid;
+    width: 100%;
+    flex: .5%;
+}
+
+.mainContainer {
+    display: flex;
+    border: 2px black solid;
+    width: 100%;
+    flex: 90%;
+}
+
+.contentLeft {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentLeft--weather {
+    border: 2px black  solid;
+    height: 15%;
+    width: 100%;
+    background-color: sandybrown;
+}
+
+.contentLeft--main {
+    height: 85%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.contentLeft--main_tasks {
+    border: 2px black  solid;
+    height: 100%;
+    width: 34%;
+    background-color: brown;
+}
+
+.contentLeft--main__right {
+    height: 100%;
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentLeft--main__rightNews {
+    border: 2px black  solid;
+    width: 100%;
+    height: 50%;
+    background-color: green;
+}
+
+.contentLeft--main__rightEvents {
+    border: 2px black  solid;
+    width: 100%;
+    height: 50%;
+    background-color: blue;
+}
+
+.contentRight {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentRight--friends {
+    border: 2px black solid;
+    height: 25%;
+    background-color: purple;
+}
+
+.contentRight--chats {
+    border: 2px black solid;
+    height: 75%;
+    background-color: yellow;
+}
+
