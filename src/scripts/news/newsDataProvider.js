@@ -9,3 +9,14 @@ export const getNews = () => {
             news = newsArr
         })
 }
+
+export const saveNewArticle = (articleObj) => {
+    fetch("http://localhost:8088/news", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(articleObj)
+    })
+    .then(getNews)
+}

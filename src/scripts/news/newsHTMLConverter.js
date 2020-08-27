@@ -2,8 +2,8 @@ const eventHub = document.querySelector('.container')
 
 // click event that closes the modal when clicked
 eventHub.addEventListener('click', event => {
+    const dialog = event.target.parentNode
     if (event.target.id === 'close') {
-        const dialog = event.target.parentNode
         dialog.close()
     }
 })
@@ -23,7 +23,7 @@ export const newsHTML = (newsObj) => {
 export const newsFormModal = () => {
     return `
     <form>
-    <h1>Save New Article</h1>
+    <h1>Save A New Article</h1>
     <fieldset>
     <label for="news-title">Article Title:</label>
     <input type="text" id="news-title" name="news-title" placeholder="Input article name here">
