@@ -19,7 +19,7 @@ export const eventList = () => {
             contentTarget.innerHTML = `
             <h2>Events</h2>
             <article class="eventList">
-            <button class="createNewEvent">Create New Event</button>
+            <button id="createNewEvent">Create New Event</button>
                 ${ eventHTMLRepresentations }
             </article>
         `
@@ -29,4 +29,11 @@ export const eventList = () => {
 eventHub.addEventListener("eventStateChanged", () => {
     const newEvents = useEvents()
     eventList(newEvents)
+})
+eventHub.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id === "createNewEvent") {
+        const createNewEvent = new CustomEvent("associatesClicked")
+        eventHub.dispatchEvent(createNewEvent)
+       
+    }
 })
