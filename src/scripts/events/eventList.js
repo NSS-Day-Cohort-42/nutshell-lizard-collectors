@@ -1,5 +1,5 @@
 import { getEvents,useEvents } from "./eventDataProvider.js"
-import { eventHTMLConverter } from "./eventHTMLConverter.js"
+import { eventHTMLConverter, eventForm } from "./eventHTMLConverter.js"
 
 
 
@@ -19,6 +19,7 @@ export const eventList = () => {
             contentTarget.innerHTML = `
             <h2>Events</h2>
             <article class="eventList">
+            <dialog class="newEventFormBox"></dialog>
             <button id="createNewEvent">Create New Event</button>
                 ${ eventHTMLRepresentations }
             </article>
@@ -37,3 +38,20 @@ eventHub.addEventListener("click", clickEvent => {
        
     }
 })
+
+eventHub.addEventListener('click', (clickEvent) => {
+    if (clickEvent.target.id === "createNewEvent") {
+        eventFormRender()
+        const dialog = document.querySelector(".newEventFormBox")
+        dialog.showModal()
+    } else if(clickEvent.target.id === "eventModalClose") {
+        const dialogClass = document.getElementById("eventModalClose")
+        
+        dialogClass.close()
+    }
+
+})
+const eventFormRender = () => {
+    const modalTarget = document.querySelector(".newEventFormBox")
+    modalTarget.innerHTML = eventForm()
+}
