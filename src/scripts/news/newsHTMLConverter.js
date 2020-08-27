@@ -1,3 +1,13 @@
+const eventHub = document.querySelector('.container')
+
+// click event that closes the modal when clicked
+eventHub.addEventListener('click', event => {
+    if (event.target.id === 'close') {
+        const dialog = event.target.parentNode
+        dialog.close()
+    }
+})
+
 export const newsHTML = (newsObj) => {
     return `
     <div class="news">
@@ -27,5 +37,6 @@ export const newsFormModal = () => {
     <input type="text" id="news-URL" name="news-URL" placeholder="Input article URL here">
     </fieldset>
     </form>
+    <button id="close">Close</button>
     `
 }
