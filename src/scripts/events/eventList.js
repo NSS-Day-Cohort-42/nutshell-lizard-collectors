@@ -19,7 +19,7 @@ export const eventList = () => {
             contentTarget.innerHTML = `
             <h2>Events</h2>
             <article class="eventList">
-            <dialog class="newEventFormBox"></dialog>
+            <dialog class="newEventFormBox" id="eventClose"></dialog>
             <button id="createNewEvent">Create New Event</button>
                 ${ eventHTMLRepresentations }
             </article>
@@ -44,8 +44,9 @@ eventHub.addEventListener('click', (clickEvent) => {
         eventFormRender()
         const dialog = document.querySelector(".newEventFormBox")
         dialog.showModal()
-    } else if(clickEvent.target.id === "eventModalClose") {
-        const dialogClass = document.getElementById("eventModalClose")
+    } 
+    else if(clickEvent.target.id === "closeEvent") {
+        const dialogClass = document.getElementById("eventClose")
         
         dialogClass.close()
     }

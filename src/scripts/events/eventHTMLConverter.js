@@ -1,4 +1,4 @@
-
+const eventHub = document.querySelector(".container")
 
 
 export const eventHTMLConverter = (eventObj) => {
@@ -24,8 +24,17 @@ return`
         <div>City: <input type="text" id="eventForm--city" placeholder="eg. Nashville" /></div>
         <div>State:<input type="text" id="eventForm--state" placeholder="TN" maxlength="2" />
         <div>Date:<input type="date" name="eventDate" id="event--date"></div>
+        <button id="closeEvent">Close</button>
         <button id="saveEvent">Create Event</button>
-        <button id="eventModalClose">Close</button>
         
         `
     }
+
+    // eventHub.addEventListener('click', event => {
+    //     if (event.target.id === 'closeEvent') {
+    //         const dialog = event.target.parentNode
+    //         dialog.close()
+    //     }
+    // })
+    
+    
