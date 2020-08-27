@@ -1,7 +1,18 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
-import { accessFriendData } from "./friends/friendList.js";
+
+const eventHub = document.querySelector(".container")
+
+
+if (sessionStorage.getItem("activeUser")=== null) {
+    LoginForm()
+    RegisterForm()
+}
+else if (sessionStorage.getItem("activeUser") !== null) {
+    Nutshell()
+}
+
 
 
 /*
@@ -11,6 +22,5 @@ import { accessFriendData } from "./friends/friendList.js";
     4. Also, if the user authenticates, and the login form is initially shown
         ensure that the Nutshell component gets rendered
 */
-RegisterForm()
-LoginForm()
-accessFriendData()
+
+

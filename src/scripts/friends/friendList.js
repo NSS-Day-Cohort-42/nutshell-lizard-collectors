@@ -1,25 +1,31 @@
-import { getFriends, useFriends } from "./friendDataProvider.js"
+import { getFriends, useFriends, getUsers, useUsers } from "./friendDataProvider.js"
 
 const friendContainer = document.querySelector(".contentRight--friends")
 const placeFriends = document.querySelector(".dropFriendsHere")
 
 let friends = []
+let users = []
 
 export const accessFriendData = () => {
   getFriends()
-  .then(useFriends)
+  .then(getUsers)
   .then(() => {
     friends = useFriends()
+    users = useUsers()
 
-    renderFriendContainer(friends)
+    
   })
+  .then(renderFriendContainer())
 }
 
-export const renderFriendContainer = (friends) => {
+export const renderFriendContainer = () => {
   
-  const getCurrentUserFriends = () => {
+  const foundFriends = friends.filter(friend => {
+    return friend.activeUserId === parseInt(sessionStorage.getItem("activeUser"))
+  })
 
-  }
+  console.log(foundFriends)
+ 
   
 
   friendContainer.innerHTML = `
