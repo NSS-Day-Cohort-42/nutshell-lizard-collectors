@@ -1,16 +1,38 @@
-const friendTarget = document.querySelector(".contentRight--friends")
+import { getFriends, useFriends } from "./friendDataProvider.js"
 
-export const renderFriendContainer = () => {
+const friendContainer = document.querySelector(".contentRight--friends")
+const placeFriends = document.querySelector(".dropFriendsHere")
+
+let friends = []
+
+export const accessFriendData = () => {
+  getFriends()
+  .then(useFriends)
+  .then(() => {
+    friends = useFriends()
+
+    renderFriendContainer(friends)
+  })
+}
+
+export const renderFriendContainer = (friends) => {
   
-  friendTarget.innerHTML = `
+  const getCurrentUserFriends = () => {
+
+  }
+  
+
+  friendContainer.innerHTML = `
     <div class="friendContainer">
-      <h4 class="friendsListHeading">Friends List</h4>
+
+      <div class="friendsListHeading">Friends List</div>
+      <div class="dropFriendsHere">Friends will render here!</div>
       <div class="buttonContainer">
         <button>Delete Friend</button>
         <button>Add Friend</button>
-      
       </div>
     
     </div>
   `
 } 
+
