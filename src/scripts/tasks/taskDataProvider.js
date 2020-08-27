@@ -23,3 +23,27 @@ return fetch("http://localhost:8088/tasks")
         
     })
 }
+
+export const saveTaskEntry = task => {
+    return fetch("http://localhost:8088/tasks", {
+        method:"POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(task)
+    })
+    .then(getTasks)
+    .then(dispatchStateChangeEvent)
+}
+
+export const updateTask = task => {
+    return fetch(`http://localhost:8088/tasks/${ tasks.id }`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(task)
+}).then(getTasks)
+    .then(dispatchStateChangeEvent)
+
+}
