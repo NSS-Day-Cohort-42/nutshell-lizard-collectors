@@ -23,3 +23,8 @@
   align-self: center;
   border: solid black 2px;
 }
+
+.oneFriend {
+  text-align: center;
+  font-size: 30px;
+}
