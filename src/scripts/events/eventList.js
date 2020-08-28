@@ -31,13 +31,7 @@ eventHub.addEventListener("eventStateChanged", () => {
     const newEvents = useEvents()
     eventList(newEvents)
 })
-eventHub.addEventListener("click", clickEvent => {
-    if(clickEvent.target.id === "createNewEvent") {
-        const createNewEvent = new CustomEvent("associatesClicked")
-        eventHub.dispatchEvent(createNewEvent)
-       
-    }
-})
+
 
 eventHub.addEventListener('click', (clickEvent) => {
     if (clickEvent.target.id === "createNewEvent") {
