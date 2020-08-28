@@ -19,11 +19,11 @@ export const accessFriendData = () => {
 
 export const renderFriendContainer = () => {
   
-  const foundFriends = friends.filter(filteredFriend => {
-    return filteredFriend.activeUserId === parseInt(sessionStorage.getItem("activeUser"))
-  })
-  
-  console.log(foundFriends)
+  // const foundFriends = friends.filter(filteredFriend => {
+  //   return filteredFriend.activeUserId === parseInt(sessionStorage.getItem("activeUser"))
+  // })
+  // console.log(foundFriends)
+  // const foundFriendsName
 
  
   
