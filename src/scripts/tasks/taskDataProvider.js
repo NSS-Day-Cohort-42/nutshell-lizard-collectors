@@ -1,4 +1,4 @@
-const eventHub = document.querySelector(".main")
+const eventHub = document.querySelector(".contentLeft--main_tasks")
 
 
 const dispatchStateChangeEvent = () => {
@@ -47,3 +47,4 @@ export const updateTask = task => {
     .then(dispatchStateChangeEvent)
 
 }
+
