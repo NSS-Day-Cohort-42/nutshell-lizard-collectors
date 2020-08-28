@@ -7,7 +7,14 @@ const dispatchEventChange = () => {
     eventHub.dispatchEvent(eventStateChange)
 }
 
-export const useNews = () => news.slice()
+export const useNews = () => {
+    const sortedNewsByDate = news.sort(
+        (a,b) => {
+            return new Date(a.date) - new Date(b.date)
+        }
+    )
+    return sortedNewsByDate.slice()
+}
 
 export const getNews = () => {
     return fetch("http://localhost:8088/news")

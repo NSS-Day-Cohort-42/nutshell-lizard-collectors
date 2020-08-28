@@ -55,7 +55,7 @@ eventHub.addEventListener("click", clickEvent => {
             synopsis: newsSynopsis.value,
             url: newsURL.value,
             timestamp: Date.now(),
-            usernameId: parseInt(sessionStorage.activeUser)
+            usernameId: parseInt(sessionStorage.getItem("activeUser"))
         }
         saveNewArticle(newEvent)
     }
