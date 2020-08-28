@@ -1,15 +1,15 @@
-const eventHub = document.querySelector(".contentLeft--main_tasks")
+const eventHub = document.querySelector(".container")
 
 
 const dispatchStateChangeEvent = () => {
-    eventHub.dispatchEvent(new CustomEvent("taskStateChanged"))
-
+    const eventStateChange = new CustomEvent("taskStateChanged")
+    eventHub.dispatchEvent(eventStateChange)
 }
 
-let task = []
+let tasks = []
 
 export const useTasks = () => {
-    return task.slice()
+    return tasks.slice()
 }
 
 
@@ -18,9 +18,9 @@ export const getTasks = () => {
 return fetch("http://localhost:8088/tasks")
     .then(response => response.json())  
     .then(ParsedEntries => {
-        console.log("tasks")
-        task = ParsedEntries
-        
+       
+        tasks = ParsedEntries
+        console.log(tasks)
     })
 }
 
@@ -55,4 +55,9 @@ export const deleteTask = (taskId) => {
     })
     .then(getTasks)
     .then(dispatchStateChangeEvent)
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
 }

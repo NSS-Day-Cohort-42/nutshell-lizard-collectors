@@ -3,9 +3,9 @@ import { useTasks, getTasks } from "./taskDataProvider.js"
 import { TaskEntryComponent } from "./taskHTMLConverter.js"
 
 const contentTarget = document.querySelector(".contentLeft--main_tasks")
-const eventHub = document.querySelector(".contentLeft--main_tasks")
+const eventHub = document.querySelector(".container")
 
-let tasks = []
+
 
 
 
@@ -16,9 +16,9 @@ let tasks = []
 export const TaskList = () => {
     getTasks()
         .then(() => {
-           const task = useTasks()
+           const tasks = useTasks()
             let taskHTMLRepresentations = ""
-            task.forEach(task => {
+            tasks.forEach(task => {
                 taskHTMLRepresentations += TaskEntryComponent(task)
             })
 
@@ -50,19 +50,7 @@ export const TaskList = () => {
 /*
     Component render function
 */
-eventHub.addEventListener("journalStateChanged", () => {
-    const allEntries = useJournalEntries()
-    render(allEntries)
+eventHub.addEventListener("taskStateChanged", () => {
+    const allTasks = useTasks()
+    TaskList(allTasks)
 });
-const render = () => {
-    contentTarget.innerHTML = 
-    
-    tasks.map(entry => {
-        
-        
-    
-        const html = TaskEntryComponent(entry)
-
-        return html
-    }).join("")
-}
