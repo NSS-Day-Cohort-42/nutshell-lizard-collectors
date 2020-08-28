@@ -1,4 +1,4 @@
-import { saveEvent } from "./eventDataProvider.js"
+import { saveEvent,deleteEvent } from "./eventDataProvider.js"
 
 const eventHub = document.querySelector(".container")
 
@@ -12,7 +12,7 @@ export const eventHTMLConverter = (eventObj) => {
             
             <button class="event__weather">Show Weather</button>
             <button class="edit__event">Edit Event</button>
-            <button class="deleteEvent">Delete</delete>
+            <button id="deleteEvent--${eventObj.id}">Delete</delete>
 
         </section>
     `
@@ -51,5 +51,14 @@ return`
 
             }
             saveEvent(newEvent)
+        }
+    })
+
+    eventHub.addEventListener("click", clickEvent => {
+        if(clickEvent.target.id.startsWith("deleteEvent--")) {
+            const [ prompt, eventIdString ] = clickEvent.target.id.split("--") 
+    
+            deleteEvent(eventIdString)
+            console.log(eventIdString)
         }
     })
