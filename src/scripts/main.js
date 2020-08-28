@@ -7,6 +7,7 @@ import "./events/eventHTMLConverter.js"
 const eventHub = document.querySelector(".container")
 eventHub.addEventListener("userAuthenticated", () => Nutshell())
 
+
 if (sessionStorage.getItem("activeUser")=== null) {
     LoginForm()
     RegisterForm()

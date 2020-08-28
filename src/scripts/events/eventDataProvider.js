@@ -22,7 +22,7 @@ export const getEvents = () => {
         .then(response => response.json())
         .then(parsedEvents => {
             events = parsedEvents
-            console.log(events)
+           
         })
 }
 
@@ -54,6 +54,7 @@ export const updateEvents = (eventObject) => {
 }
 
 export const deleteEvent = (eventId) => {
+    debugger
     return fetch(`http://localhost:8088/events/${ eventId }`, {
         method: "DELETE"
     })
