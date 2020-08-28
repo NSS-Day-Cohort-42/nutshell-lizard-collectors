@@ -4,6 +4,11 @@ import { newsHTML, newsFormModal } from "./newsHTMLConverter.js"
 const contentTarget = document.querySelector(".contentLeft--main__rightNews")
 const eventHub = document.querySelector(".container")
 
+eventHub.addEventListener("eventStateChanged", () => {
+    const allNews = useNews()
+    newsList(allNews)
+})
+
 eventHub.addEventListener('click', (clickEvent) => {
     if (clickEvent.target.id === "new-article-btn") {
         // const dialog = newsFormModal()
@@ -35,8 +40,3 @@ export const newsList = () => {
         render(news)
     })
 }
-
-eventHub.addEventListener("eventStateChanged", () => {
-    const allNews = useNews()
-    newsList(allNews)
-})
