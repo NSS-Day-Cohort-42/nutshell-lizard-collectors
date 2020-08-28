@@ -5,7 +5,10 @@
 @import "./tasks.css";
 @import "./weather.css";
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8a2e0d25fb3bfbf06c1a5353d6c48fd017c4e4e8
 .dashboard {
     display: flex;
     flex-direction: column;

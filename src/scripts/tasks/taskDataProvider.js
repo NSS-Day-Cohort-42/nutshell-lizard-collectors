@@ -48,3 +48,11 @@ export const updateTask = task => {
 
 }
 
+export const deleteTask = (taskId) => {
+    debugger
+    return fetch(`http://localhost:8088/tasks/${ taskId }`, {
+        method: "DELETE"
+    })
+    .then(getTasks)
+    .then(dispatchStateChangeEvent)
+}

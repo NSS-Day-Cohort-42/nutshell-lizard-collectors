@@ -1,8 +1,26 @@
+<<<<<<< HEAD
 
 
 import { TaskList } from ".//tasks/taskList.js"
 
 TaskList()
+=======
+import { LoginForm } from "./auth/LoginForm.js"
+import { RegisterForm } from "./auth/RegisterForm.js"
+import { Nutshell } from "./Nutshell.js"
+import { eventList } from "./events/eventList.js"
+import "./events/eventHTMLConverter.js"
+
+
+if (sessionStorage.getItem("activeUser")=== null) {
+    LoginForm()
+    RegisterForm()
+}
+else if (sessionStorage.getItem("activeUser") !== null) {
+    Nutshell()
+}
+
+>>>>>>> 8a2e0d25fb3bfbf06c1a5353d6c48fd017c4e4e8
 
 
 /*

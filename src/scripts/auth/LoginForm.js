@@ -1,8 +1,11 @@
+import { Nutshell } from "../Nutshell.js"
+
 const contentTarget = document.querySelector(".auth--login")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("userAuthenticated", e => {
     contentTarget.innerHTML = ""
+    Nutshell()
 })
 
 eventHub.addEventListener("click", e => {
@@ -22,6 +25,7 @@ eventHub.addEventListener("click", e => {
                         eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
                     }
                 }
+                console.log(parseInt(sessionStorage.getItem("activeUser")))
             })
     }
 })
