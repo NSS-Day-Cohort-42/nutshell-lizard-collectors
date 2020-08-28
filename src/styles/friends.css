@@ -1,0 +1,25 @@
+.friendContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: slategrey;
+  height: 100%;
+}
+
+.friendsListHeading {
+  text-align: center;
+  margin-top: .5rem;
+  font-size: 2rem;
+}
+
+.buttonContainer {
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.dropFriendsHere {
+  margin: .5rem;
+  height: 80%;
+  width: 90%;
+  align-self: center;
+  border: solid black 2px;
+}
