@@ -1,3 +1,6 @@
+import { saveNewArticle, deleteNewsArticle } from "./newsDataProvider.js"
+import { newsList } from "./newsList.js"
+
 const eventHub = document.querySelector('.container')
 
 // click event that closes the modal when clicked
@@ -11,12 +14,11 @@ eventHub.addEventListener('click', event => {
 export const newsHTML = (newsObj) => {
     return `
     <div class="news">
-    <h3>News</h3>
-    <button id="new-article-btn">New Article</button>
         <p>Title: ${ newsObj.title }</p>
         <p>Synopsis: ${ newsObj.synopsis }</p>
         <p>Link: ${ newsObj.url }</p>
     </div>
+    <button id="deleteArticle--${ newsObj.id }">Delete</button>
     `
 }
 
@@ -38,5 +40,31 @@ export const newsFormModal = () => {
     </fieldset>
     </form>
     <button id="close">Close</button>
+    <button id="save-new-article">Save Article</button>
     `
 }
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "save-new-article") {
+        const newsTitle = document.querySelector("#news-title")
+        const newsSynopsis = document.querySelector("#news-synopsis")
+        const newsURL = document.querySelector("#news-URL")
+
+        const newEvent = {
+            title: newsTitle.value,
+            synopsis: newsSynopsis.value,
+            url: newsURL.value,
+            timestamp: Date.now(),
+            usernameId: parseInt(sessionStorage.activeUser)
+        }
+        saveNewArticle(newEvent)
+    }
+})
+
+eventHub.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id.startsWith("deleteArticle--")) {
+        const [ prompt, eventIdString ] = clickEvent.target.id.split("--")
+
+        deleteNewsArticle(eventIdString)
+    }
+})
