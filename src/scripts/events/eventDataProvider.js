@@ -54,6 +54,7 @@ export const updateEvents = (eventObject) => {
 }
 
 export const deleteEvent = (eventId) => {
+    debugger
     return fetch(`http://localhost:8088/events/${ eventId }`, {
         method: "DELETE"
     })
