@@ -5,7 +5,7 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("userAuthenticated", e => {
     contentTarget.innerHTML = ""
-    // Nutshell()
+ 
 })
 
 eventHub.addEventListener("click", e => {
