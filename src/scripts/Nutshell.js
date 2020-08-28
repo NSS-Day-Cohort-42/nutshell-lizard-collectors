@@ -6,7 +6,7 @@ import { TaskList } from ".//tasks/taskList.js"
 export const Nutshell = () => {
     // Render all your UI components here
     
-    
+  
     
     accessFriendData()
     newsList()

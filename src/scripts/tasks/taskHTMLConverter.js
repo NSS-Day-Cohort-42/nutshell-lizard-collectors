@@ -24,7 +24,6 @@ eventHub.addEventListener("click", clickEvent => {
     
     console.log("event")
     if(clickEvent.target.id === "taskRecordButton") {
-        debugger
         const taskEntry = document.querySelector("#taskRecord")
         const taskUserId = document.querySelector("#taskUserId")
         const taskCompleted = document.querySelector("#taskCompleted")
