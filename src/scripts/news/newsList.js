@@ -35,3 +35,8 @@ export const newsList = () => {
         render(news)
     })
 }
+
+eventHub.addEventListener("eventStateChanged", () => {
+    const allNews = useNews()
+    newsList(allNews)
+})
