@@ -5,6 +5,7 @@ import { eventList } from "./events/eventList.js"
 import "./events/eventHTMLConverter.js"
 
 
+
 if (sessionStorage.getItem("activeUser")=== null) {
     LoginForm()
     RegisterForm()
