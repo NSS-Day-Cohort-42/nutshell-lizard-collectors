@@ -2,12 +2,12 @@ let friends = []
 let users = []
 
 
-// const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container")
 
-// const dispatchStateChange = () => {
-//     const friendStateChange = new CustomEvent("FriendStateChanged")
-//     eventHub.dispatchEvent(friendStateChange)
-// }
+const dispatchStateChange = () => {
+    const friendStateChange = new CustomEvent("friendStateChanged")
+    eventHub.dispatchEvent(friendStateChange)
+}
 
 
 export const useUsers = () => users.slice()
@@ -33,14 +33,14 @@ export const getFriends = () => {
 
 
 
-// export const addFriend = (friend) => {
-//   return fetch("http://localhost:8088/friends", {
-//       method : "POST",
-//       headers : {
-//           "Content-Type" : "application/json"
-//       },
-//       body: JSON.stringify(friend)
-//   })
-//   .then(getFriends)
-//   .then(dispatchStateChange)
-// }
+export const addFriend = (friend) => {
+  return fetch("http://localhost:8088/friends", {
+      method : "POST",
+      headers : {
+          "Content-Type" : "application/json"
+      },
+      body: JSON.stringify(friend)
+  })
+  .then(getFriends)
+  .then(dispatchStateChange)
+}
