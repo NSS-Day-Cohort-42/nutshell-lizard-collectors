@@ -1,4 +1,4 @@
-import { getFriends, useFriends, getUsers, useUsers } from "./friendDataProvider.js"
+import { getFriends, useFriends, getUsers, useUsers, addFriend } from "./friendDataProvider.js"
 import { friendsAsHTML } from "./friendHTMLConverter.js"
 
 const eventHub = document.querySelector(".container")
@@ -10,16 +10,19 @@ let users = []
 export const accessFriendData = () => {
   getFriends()
   .then(getUsers)
-  .then(() => {
-    friends = useFriends()
-    users = useUsers()  
-    renderFriendContainer()
-  })
+  .then(setVarState)
+}
+
+export const setVarState = () => {
+  friends = useFriends()
+  users = useUsers()
+  renderFriendContainer()
 }
 
 // filters and maps friend and user data from api and returns an array of friends
 // Builds a string of friends and adds them to the html below
 export const renderFriendContainer = () => {
+
 
   const currentUser = parseInt(sessionStorage.getItem("activeUser"))
 
@@ -54,18 +57,50 @@ export const renderFriendContainer = () => {
   `
 } 
 
-eventHub.addEventListener("friendStateChanged", renderFriendContainer)
+eventHub.addEventListener("friendStateChanged", setVarState)
 
 eventHub.addEventListener("click", e => {
   if (e.target.id === "addFriendButton") {
     const addFriendModal = document.querySelector(".addFriendDialog")
     addFriendModal.innerHTML = `
-    <div>Hello</div>
+    <label for="listOfUsers">Select a user to add to your friends list</label>
+    <select name="listOfUsers" id="listOfUsers">
+      <option value="0">choose a user below</option>
+      ${
+        users.map(
+          (user) => {
+            return `<option value=${user.id}>${user.username}</option>`
+          }
+        ).join("")
+      }
+    </select>
+    <button id="saveFriendButton">Save Friend</button>
     <button id="closeButton">Close</button>
     `
     addFriendModal.showModal()
 
   } 
+})
+
+eventHub.addEventListener("click", e => {
+  if (e.target.id === "saveFriendButton") {
+    const friendId = document.querySelector("#listOfUsers").value
+    const activeUser = parseInt(sessionStorage.getItem("activeUser"))
+    const matchingFriend = users.find(
+      (user) => {
+        return user.id === parseInt(friendId)
+      }
+      )
+      const friendName = matchingFriend.id
+      console.log(friendName)
+
+    const newFriend = {
+      userId: friendName,
+      activeUserId: activeUser
+    }
+    console.log(newFriend)
+    addFriend(newFriend)
+  }
 })
 
 eventHub.addEventListener("click", event => {
