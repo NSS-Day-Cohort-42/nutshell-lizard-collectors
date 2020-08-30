@@ -46,11 +46,11 @@ export const addFriend = (friend) => {
 }
 
 export const deleteFriend = (id) => {
-  return fetch(`http://localhost:8088/friends/${entryId}`, {
+  return fetch(`http://localhost:8088/friends/${id}`, {
     method: "DELETE"
   })
-  .then(getEntries)
-  .then(dispatchStateChangeEvent)
+  .then(getFriends)
+  .then(dispatchStateChange)
   .catch(
     (error) => {
       console.log(error)

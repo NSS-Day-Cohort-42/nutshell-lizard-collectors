@@ -123,13 +123,12 @@ eventHub.addEventListener("click", e => {
       }
       )
       const friendName = matchingFriend.id
-      console.log(friendName)
 
     const newFriend = {
       userId: friendName,
       activeUserId: activeUser
     }
-    console.log(newFriend)
+   
     addFriend(newFriend)
     const dialog = event.target.parentNode
     dialog.close()
@@ -138,19 +137,20 @@ eventHub.addEventListener("click", e => {
 
 // This event deletes a friend
 eventHub.addEventListener("click", e => {
-  if (e.target.id === "deleteFriendButton") {
+  if (e.target.id === "deleteFriendButtonSave") {
     const Id = document.querySelector("#listOfUsers").value
-    const activeUser = parseInt(sessionStorage.getItem("activeUser"))
-    const findFriend = friends.find(
+    const activeUser = friends.filter(
       (friend) => {
-        return friend.userId === Id && activeUser === friend.activeUserId
+        return friend.activeUserId === parseInt(sessionStorage.getItem("activeUser"))
       }
-    )
-    console.log(findFriend)
+      )
     
-    // deleteFriend(Id)
-    // const dialog = event.target.parentNode
-    // dialog.close()
+    const foundFriend = activeUser.find(friend => friend.userId === parseInt(Id))
+    const idToDelete = foundFriend.id
+    
+    deleteFriend(idToDelete)
+    const dialog = event.target.parentNode
+    dialog.close()
   }
 })
 
