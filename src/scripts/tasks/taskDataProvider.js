@@ -26,7 +26,7 @@ return fetch("http://localhost:8088/tasks")
     .then(ParsedEntries => {
        
         tasks = ParsedEntries
-        console.log(tasks)
+    
     })
 }
 
@@ -43,7 +43,6 @@ export const saveTaskEntry = task => {
 }
 
 export const updateTask = task => {
-    console.log(task)
     return fetch(`http://localhost:8088/tasks/${ tasks.id }`, {
         method: "PUT",
         headers: {
@@ -63,9 +62,6 @@ export const deleteTask = (taskId) => {
     .then(getTasks)
     .then(dispatchStateChangeEvent)
     .catch(
-        (error) => {
-            console.log(error)
-        }
     )
 }
 
@@ -83,8 +79,7 @@ export const markTask = (taskId) => {
     .then(getTasks)
     .then(dispatchStateChangeEvent)
     .catch(
-        (error) => {
-            console.log(error)
-        }
+        
+        
     )
 }

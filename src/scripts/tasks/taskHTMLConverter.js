@@ -14,7 +14,7 @@ export const TaskEntryComponent = (tasks) => {
     <div id="task__date" class="task__date">${tasks.date}</div>
     <button id="deleteTask--${ tasks.id}">Delete</button>
     <button id="editEntry--${tasks.id}">Edit</button>
-    <button id="taskRecordButton--${tasks.id}">Mark as complete</button>
+    <div id="taskRecordButton--${tasks.id}"><b>Mark as complete:</b></div>
     <input type="checkbox" id="myCheck--${tasks.id}">
 
     
@@ -46,7 +46,6 @@ export const taskForm = () => {
 
 eventHub.addEventListener("editEntryButtonClicked", () => {
     editTaskEntry()
-    console.log("edit") 
    
   });
     const editTaskEntry = () => {
@@ -72,7 +71,6 @@ eventHub.addEventListener("editEntryButtonClicked", () => {
 
 eventHub.addEventListener("click", clickEvent => {
 
-    console.log("event")
     if (clickEvent.target.id === "saveTask") {
         
         const id = document.querySelector("#taskId");
@@ -141,6 +139,6 @@ eventHub.addEventListener("click", clickEvent => {
         const [prompt, taskIdString] = clickEvent.target.id.split("--")
 
         deleteTask(taskIdString)
-        console.log(taskIdString)
+        
     }
 })

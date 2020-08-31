@@ -73,6 +73,6 @@ return`
             const [ prompt, eventIdString ] = clickEvent.target.id.split("--") 
     
             deleteEvent(eventIdString)
-            console.log(eventIdString)
+            
         }
     })

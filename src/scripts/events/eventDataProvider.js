@@ -60,9 +60,6 @@ export const deleteEvent = (eventId) => {
     })
     .then(getEvents)
     .then(dispatchEventChange)
-    .catch(
-        (error) => {
-            console.log(error)
-        }
-    )
+
+        
 }
