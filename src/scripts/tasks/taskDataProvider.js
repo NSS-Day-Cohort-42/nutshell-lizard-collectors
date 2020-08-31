@@ -61,8 +61,8 @@ export const deleteTask = (taskId) => {
     })
     .then(getTasks)
     .then(dispatchStateChangeEvent)
-    .catch(
-    )
+    
+    
 }
 
 export const markTask = (taskId) => {
@@ -78,8 +78,8 @@ export const markTask = (taskId) => {
     })
     .then(getTasks)
     .then(dispatchStateChangeEvent)
-    .catch(
+    
         
         
-    )
+    
 }
