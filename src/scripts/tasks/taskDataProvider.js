@@ -70,7 +70,7 @@ export const deleteTask = (taskId) => {
 }
 
 export const markTask = (taskId) => {
-    debugger
+    
     return fetch(`http://localhost:8088/tasks/${ taskId }`, {
         method: "PATCH",
         headers: {

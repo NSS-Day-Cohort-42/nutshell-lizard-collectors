@@ -50,7 +50,7 @@ eventHub.addEventListener("editEntryButtonClicked", () => {
    
   });
     const editTaskEntry = () => {
-      debugger
+      
       const entryMatchId = event.detail.taskId;
       const entriesCollection = useTasks();
   
@@ -74,7 +74,7 @@ eventHub.addEventListener("click", clickEvent => {
 
     console.log("event")
     if (clickEvent.target.id === "saveTask") {
-        debugger
+        
         const id = document.querySelector("#taskId");
         const taskName = document.querySelector("#taskName")
         const taskEntry = document.querySelector("#taskRecord")
@@ -111,7 +111,7 @@ eventHub.addEventListener("click", clickEvent => {
        
 })
 eventHub.addEventListener("click", clickEvent => {
-    debugger
+    
     if (clickEvent.target.id.startsWith("myCheck--")) {
         const [prompt, taskIdString] = clickEvent.target.id.split("--")
 
