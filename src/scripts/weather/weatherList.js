@@ -1,5 +1,6 @@
 import {useWeather,getWeather} from "./weatherDataProvider.js"
 import {weatherHTML} from "./weatherHTMLConverter.js"
+import { getEvents, useEvents } from "../events/eventDataProvider.js"
 
 const contentTarget=document.querySelector(".contentLeft--weather")
 const eventHub=document.querySelector(".container")
@@ -23,3 +24,4 @@ export const weatherList = () => {
     </section>`
     })
 }
+
