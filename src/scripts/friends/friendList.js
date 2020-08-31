@@ -1,18 +1,20 @@
 import { getFriends, useFriends, getUsers, useUsers, addFriend, deleteFriend } from "./friendDataProvider.js"
 import { friendsAsHTML } from "./friendHTMLConverter.js"
 
+// declaring state variables for use below
 const eventHub = document.querySelector(".container")
 const friendContainer = document.querySelector(".contentRight--friends")
 let friends = []
 let users = []
 
-
-export const accessFriendData = () => {
+// Basic function to get and access data needed to render friends
+export const friendList = () => {
   getFriends()
   .then(getUsers)
   .then(setVarState)
 }
 
+// sets the state of the variables to the newly acquired data and then renders the friend container.
 export const setVarState = () => {
   friends = useFriends()
   users = useUsers()
@@ -62,9 +64,10 @@ export const renderFriendContainer = () => {
   `
 } 
 
+// Event listener that refreshes friend list when users or friends update
 eventHub.addEventListener("friendStateChanged", setVarState)
 
-// Below is the add friends click event
+// Renders modal to choose a friend to add to list of friends
 eventHub.addEventListener("click", e => {
   if (e.target.id === "addFriendButton") {
     const addFriendModal = document.querySelector(".addFriendDialog")
@@ -93,7 +96,7 @@ eventHub.addEventListener("click", e => {
   } 
 })
 
-// Below is the delete friends click event
+// Renders modal to choose a friend to delete from list of friends
 eventHub.addEventListener("click", e => {
   if (e.target.id === "deleteFriendButton") {
     const deleteFriendModal = document.querySelector(".deleteFriendDialog")
@@ -122,7 +125,7 @@ eventHub.addEventListener("click", e => {
   } 
 })
 
-// below is the save friends click event
+// saves the selected friend to database assuming they are not currently a friend
 eventHub.addEventListener("click", e => {
   if (e.target.id === "saveFriendButton") {
     const friendId = document.querySelector("#listOfUsers").value
@@ -145,7 +148,7 @@ eventHub.addEventListener("click", e => {
   }
 })
 
-// This event deletes a friend
+// removes the selected friend from the database assuming they are currently a friend
 eventHub.addEventListener("click", e => {
   if (e.target.id === "deleteFriendButtonSave") {
     const Id = document.querySelector("#listOfUsers").value
