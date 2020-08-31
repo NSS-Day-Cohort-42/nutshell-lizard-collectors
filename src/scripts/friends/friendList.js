@@ -111,8 +111,9 @@ eventHub.addEventListener("click", e => {
     })
 
     deleteFriendModal.innerHTML = `
-    <label for="listOfUsers">Select a user to add to your friends list</label>
-    <select name="listOfUsers" id="listOfUsers">
+    <div class="deleteFriendContainer">
+    <label class="deleteFriendHead" for="listOfUsers">Select a user to add to your friends list</label>
+    <select class="deleteFriendSelect" name="listOfUsers" id="listOfUsers">
       <option value="0">choose a user below</option>
       ${
         arrNoSelf.map(
@@ -122,8 +123,9 @@ eventHub.addEventListener("click", e => {
         ).join("")
       }
     </select>
-    <button id="deleteFriendButtonSave">Delete Friend</button>
-    <button id="closeButton">Close</button>
+    <button class="deleteFriendAddButton" id="deleteFriendButtonSave">Delete Friend</button>
+    </div>
+    <button class="deleteFriendCloseButton" id="closeButton">Close</button>
     `
     deleteFriendModal.showModal()
 

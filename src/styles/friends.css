@@ -50,3 +50,24 @@
 .addFriendCloseButton {
   margin: 1rem;
 }
+
+.deleteFriendContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.deleteFriendHead {
+  margin: 1rem;
+}
+
+.deleteFriendSelect {
+  margin: 1rem;
+}
+
+.deleteFriendAddButton {
+  margin: 1rem;
+}
+
+.deleteFriendCloseButton {
+  margin: 1rem;
