@@ -25,10 +25,7 @@ export const useFriends = () => friends.slice()
 export const getFriends = () => {
   return fetch("http://localhost:8088/friends?_expand=user")
   .then(res => res.json())
-  .then(
-    data => friends = data
-
-  )
+  .then(data => friends = data)
 }
 
 
