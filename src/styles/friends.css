@@ -28,3 +28,46 @@
   text-align: center;
   font-size: 30px;
 }
+
+.addFriendContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.addFriendHead {
+  margin: 1rem;
+}
+
+.addFriendSelect {
+  margin: 1rem;
+}
+
+.addFriendAddButton {
+  margin: 1rem;
+}
+
+.addFriendCloseButton {
+  margin: 1rem;
+}
+
+.deleteFriendContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.deleteFriendHead {
+  margin: 1rem;
+}
+
+.deleteFriendSelect {
+  margin: 1rem;
+}
+
+.deleteFriendAddButton {
+  margin: 1rem;
+}
+
+.deleteFriendCloseButton {
+  margin: 1rem;

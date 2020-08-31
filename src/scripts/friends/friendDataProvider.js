@@ -2,12 +2,12 @@ let friends = []
 let users = []
 
 
-// const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container")
 
-// const dispatchStateChange = () => {
-//     const friendStateChange = new CustomEvent("FriendStateChanged")
-//     eventHub.dispatchEvent(friendStateChange)
-// }
+const dispatchStateChange = () => {
+    const friendStateChange = new CustomEvent("friendStateChanged")
+    eventHub.dispatchEvent(friendStateChange)
+}
 
 
 export const useUsers = () => users.slice()
@@ -23,7 +23,7 @@ export const getUsers = () => {
 export const useFriends = () => friends.slice()
 
 export const getFriends = () => {
-  return fetch("http://localhost:8088/friends")
+  return fetch("http://localhost:8088/friends?_expand=user")
   .then(res => res.json())
   .then(
     data => friends = data
@@ -33,14 +33,27 @@ export const getFriends = () => {
 
 
 
-// export const addFriend = (friend) => {
-//   return fetch("http://localhost:8088/friends", {
-//       method : "POST",
-//       headers : {
-//           "Content-Type" : "application/json"
-//       },
-//       body: JSON.stringify(friend)
-//   })
-//   .then(getFriends)
-//   .then(dispatchStateChange)
-// }
+export const addFriend = (friend) => {
+  return fetch("http://localhost:8088/friends", {
+      method : "POST",
+      headers : {
+          "Content-Type" : "application/json"
+      },
+      body: JSON.stringify(friend)
+  })
+  .then(getFriends)
+  .then(dispatchStateChange)
+}
+
+export const deleteFriend = (id) => {
+  return fetch(`http://localhost:8088/friends/${id}`, {
+    method: "DELETE"
+  })
+  .then(getFriends)
+  .then(dispatchStateChange)
+  .catch(
+    (error) => {
+      console.log(error)
+    }
+  )
+}
