@@ -14,11 +14,11 @@ eventHub.addEventListener('click', event => {
 export const newsHTML = (newsObj) => {
     return `
     <div class="news">
-        <p>Title: <a href="${ newsObj.url }">${ newsObj.title }</a></p>
-        <p>Synopsis: ${ newsObj.synopsis }</p>
-        <p>Saved by: ${ newsObj.user.username }</p>
+        <p class="news-text">Title: <a href="${ newsObj.url }">${ newsObj.title }</a></p>
+        <p class="news-text">Synopsis: ${ newsObj.synopsis }</p>
+        <p class="news-user">Saved by: ${ newsObj.user.username }</p>
+        <button class="button" id="deleteArticle--${ newsObj.id }">Delete</button>
     </div>
-    <button id="deleteArticle--${ newsObj.id }">Delete</button>
     `
 }
 

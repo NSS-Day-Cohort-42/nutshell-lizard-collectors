@@ -21,8 +21,8 @@ eventHub.addEventListener('click', (clickEvent) => {
 const render = () => {
     const newsRender = useNews()
     contentTarget.innerHTML = `
-    <h1>News</h1>
-    <button id="new-article-btn">New Article</button>
+    <h1 class="news-text">News</h1>
+    <button class="button" id="new-article-btn">New Article</button>
     ${newsRender.map(newsObj => newsHTML(newsObj)).join('')}
     <dialog class="modalContainer--news"></dialog>
     `
