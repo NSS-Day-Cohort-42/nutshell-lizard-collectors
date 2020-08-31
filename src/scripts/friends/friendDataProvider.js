@@ -51,9 +51,7 @@ export const deleteFriend = (id) => {
   })
   .then(getFriends)
   .then(dispatchStateChange)
-  .catch(
-    (error) => {
-      console.log(error)
-    }
-  )
+
+    
+  
 }
