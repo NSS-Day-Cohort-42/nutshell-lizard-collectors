@@ -36,6 +36,7 @@ return`
     
     eventHub.addEventListener("click", clickEvent => {
         if (clickEvent.target.id === "saveEvent") {
+            debugger
             const eventName = document.querySelector("#eventForm--name")
             const eventCity = document.querySelector("#eventForm--city")
             const eventState = document.querySelector("#eventForm--state")

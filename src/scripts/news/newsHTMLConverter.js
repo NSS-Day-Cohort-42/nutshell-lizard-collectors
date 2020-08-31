@@ -39,7 +39,7 @@ export const newsFormModal = () => {
     <input type="text" id="news-URL" name="news-URL" placeholder="Input article URL here">
     </fieldset>
     </form>
-    <button id="close">Close</button>
+    <button id="closeTask">Close</button>
     <button id="save-new-article">Save Article</button>
     `
 }

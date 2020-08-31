@@ -1,7 +1,7 @@
 const eventHub = document.querySelector(".container")
 
 
-const dispatchStateChangeEvent = () => {
+export const dispatchStateChangeEvent = () => {
     const eventStateChange = new CustomEvent("taskStateChanged")
     eventHub.dispatchEvent(eventStateChange)
 }
@@ -9,7 +9,13 @@ const dispatchStateChangeEvent = () => {
 let tasks = []
 
 export const useTasks = () => {
-    return tasks.slice()
+    const sortedByDate = tasks.sort(
+        (a,b) =>{
+            return new Date(a.date) - new Date(b.date)
+        }
+        
+    )
+    return sortedByDate.slice()
 }
 
 
@@ -37,6 +43,7 @@ export const saveTaskEntry = task => {
 }
 
 export const updateTask = task => {
+    console.log(task)
     return fetch(`http://localhost:8088/tasks/${ tasks.id }`, {
         method: "PUT",
         headers: {
@@ -52,6 +59,26 @@ export const deleteTask = (taskId) => {
     debugger
     return fetch(`http://localhost:8088/tasks/${ taskId }`, {
         method: "DELETE"
+    })
+    .then(getTasks)
+    .then(dispatchStateChangeEvent)
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
+}
+
+export const markTask = () => {
+    debugger
+    return fetch("http://localhost:8088/tasks/1", {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            complete: true
+            }),
     })
     .then(getTasks)
     .then(dispatchStateChangeEvent)
