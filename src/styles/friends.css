@@ -29,8 +29,24 @@
   font-size: 30px;
 }
 
-.addFriendDialog {
+.addFriendContainer {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
 }
 
+.addFriendHead {
+  margin: 1rem;
+}
+
+.addFriendSelect {
+  margin: 1rem;
+}
+
+.addFriendAddButton {
+  margin: 1rem;
+}
+
+.addFriendCloseButton {
+  margin: 1rem;
+}

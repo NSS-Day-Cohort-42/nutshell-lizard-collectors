@@ -80,9 +80,10 @@ eventHub.addEventListener("click", e => {
     })
     
     addFriendModal.innerHTML = `
-    <label for="listOfUsers">Select a user to add to your friends list</label>
-    <select name="listOfUsers" id="listOfUsers">
-      <option value="0">choose a user below</option>
+    <div class="addFriendContainer">
+    <label class="addFriendHead" for="listOfUsers">Select a user to add to your friends list</label>
+    <select class="addFriendSelect" name="listOfUsers" id="listOfUsers">
+      <option value="0">choose a user to add as a friend</option>
       ${
         arrOfUsersNoSelf.map(
           (user) => {
@@ -91,8 +92,9 @@ eventHub.addEventListener("click", e => {
         ).join("")
       }
     </select>
-    <button id="saveFriendButton">Add Friend</button>
-    <button id="closeButton">Close</button>
+    <button class="addFriendAddButton" id="saveFriendButton">Add Friend</button>
+    </div>
+    <button class="addFriendCloseButton" id="closeButton">Close</button>
     `
     addFriendModal.showModal()
 
