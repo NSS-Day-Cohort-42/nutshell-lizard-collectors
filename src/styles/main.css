@@ -9,7 +9,7 @@
 .dashboard {
     display: flex;
     flex-direction: column;
-    height: 2000px;
+    height: 1500px;
 }
 
 .header {
