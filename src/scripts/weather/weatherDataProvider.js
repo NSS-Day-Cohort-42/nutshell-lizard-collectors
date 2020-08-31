@@ -7,9 +7,9 @@ export const useWeather = () => {
 }
 
 
-export const getWeather = (event) => {
+export const getWeather = (location) => {
  
-    return fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${event.city},${event.state},us&mode=json&appid=${key.weatherKey}`)
+    return fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location.city},${location.state},us&mode=json&appid=${key.weatherKey}`)
         .then(response => response.json())
         .then(parsedWeather => {
             weather = parsedWeather.list

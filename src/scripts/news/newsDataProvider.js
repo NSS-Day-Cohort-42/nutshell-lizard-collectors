@@ -42,9 +42,5 @@ export const deleteNewsArticle = (eventId) => {
     })
         .then(getNews)
         .then(dispatchEventChange)
-        .catch(
-            (error) => {
-                console.log(error)
-            }
-        )
+        
 }
