@@ -57,15 +57,15 @@ eventHub.addEventListener("editEntryButtonClicked", () => {
       const entryToEdit = entriesCollection.find((tasks) => {
         return entryMatchId === tasks.id;
       });
-          const taskName = document.querySelector("#taskName")
-          const entryDate = document.querySelector("#taskForm--date");
-          const taskEntry = document.querySelector("#taskRecord");
-          const editTaskId = document.querySelector("#taskId");
+        //   const taskName = document.querySelector("#taskName")
+        //   const entryDate = document.querySelector("#taskForm--date");
+        //   const taskEntry = document.querySelector("#taskRecord");
+        //   const editTaskId = document.querySelector("#taskId");
           
-          taskName.value = entryToEdit.name
-          entryDate.value = entryToEdit.date;
-          taskEntry.value = entryToEdit.task;
-          editTaskId.value = entryMatchId
+        //   taskName.value = entryToEdit.name
+        //   entryDate.value = entryToEdit.date;
+        //   taskEntry.value = entryToEdit.task;
+        //   editTaskId.value = entryMatchId
   
   
   };
