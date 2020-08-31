@@ -14,9 +14,9 @@ eventHub.addEventListener('click', event => {
 export const newsHTML = (newsObj) => {
     return `
     <div class="news">
-        <p>Title: ${ newsObj.title }</p>
+        <p>Title: <a href="${ newsObj.url }">${ newsObj.title }</a></p>
         <p>Synopsis: ${ newsObj.synopsis }</p>
-        <p>Link: ${ newsObj.url }</p>
+        <p>Saved by: ${ newsObj.user.username }</p>
     </div>
     <button id="deleteArticle--${ newsObj.id }">Delete</button>
     `
@@ -27,7 +27,7 @@ export const newsFormModal = () => {
     <form>
     <h1>Save A New Article</h1>
     <fieldset>
-    <label for="news-title">Article Title:</label>
+    <label for="news-title">Title:</label>
     <input type="text" id="news-title" name="news-title" placeholder="Input article name here">
     </fieldset>
     <fieldset>
@@ -36,7 +36,7 @@ export const newsFormModal = () => {
     </fieldset>
     <fieldset>
     <label for="news-URL">Article URL</label>
-    <input type="text" id="news-URL" name="news-URL" placeholder="Input article URL here">
+    <input type="text" id="news-URL" name="news-URL" placeholder="https://www.news.com">
     </fieldset>
     </form>
     <button id="closeTask">Close</button>
@@ -55,7 +55,7 @@ eventHub.addEventListener("click", clickEvent => {
             synopsis: newsSynopsis.value,
             url: newsURL.value,
             timestamp: Date.now(),
-            usernameId: parseInt(sessionStorage.getItem("activeUser"))
+            userId: parseInt(sessionStorage.getItem("activeUser"))
         }
         saveNewArticle(newEvent)
     }
