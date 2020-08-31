@@ -69,19 +69,22 @@ eventHub.addEventListener("friendStateChanged", setVarState)
 
 // Renders modal to choose a friend to add to list of friends
 eventHub.addEventListener("click", e => {
+
+  const currentUser = parseInt(sessionStorage.getItem("activeUser"))
+
   if (e.target.id === "addFriendButton") {
     const addFriendModal = document.querySelector(".addFriendDialog")
-    
-    const arrNoSelf = users.filter(filteredUser => {
+
+    const arrOfUsersNoSelf = users.filter(filteredUser => {
       return filteredUser.id !== parseInt(sessionStorage.getItem("activeUser"))
     })
-
+    
     addFriendModal.innerHTML = `
     <label for="listOfUsers">Select a user to add to your friends list</label>
     <select name="listOfUsers" id="listOfUsers">
       <option value="0">choose a user below</option>
       ${
-        arrNoSelf.map(
+        arrOfUsersNoSelf.map(
           (user) => {
             return `<option value=${user.id}>${user.username}</option>`
           }

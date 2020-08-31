@@ -28,3 +28,9 @@
   text-align: center;
   font-size: 30px;
 }
+
+.addFriendDialog {
+  display: flex;
+  flex-direction: column;
+}
+
