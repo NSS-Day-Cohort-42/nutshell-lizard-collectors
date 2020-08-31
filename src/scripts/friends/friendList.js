@@ -68,12 +68,17 @@ eventHub.addEventListener("friendStateChanged", setVarState)
 eventHub.addEventListener("click", e => {
   if (e.target.id === "addFriendButton") {
     const addFriendModal = document.querySelector(".addFriendDialog")
+    
+    const arrNoSelf = users.filter(filteredUser => {
+      return filteredUser.id !== parseInt(sessionStorage.getItem("activeUser"))
+    })
+
     addFriendModal.innerHTML = `
     <label for="listOfUsers">Select a user to add to your friends list</label>
     <select name="listOfUsers" id="listOfUsers">
       <option value="0">choose a user below</option>
       ${
-        users.map(
+        arrNoSelf.map(
           (user) => {
             return `<option value=${user.id}>${user.username}</option>`
           }
@@ -92,12 +97,17 @@ eventHub.addEventListener("click", e => {
 eventHub.addEventListener("click", e => {
   if (e.target.id === "deleteFriendButton") {
     const deleteFriendModal = document.querySelector(".deleteFriendDialog")
+
+    const arrNoSelf = users.filter(filteredUser => {
+      return filteredUser.id !== parseInt(sessionStorage.getItem("activeUser"))
+    })
+
     deleteFriendModal.innerHTML = `
     <label for="listOfUsers">Select a user to add to your friends list</label>
     <select name="listOfUsers" id="listOfUsers">
       <option value="0">choose a user below</option>
       ${
-        users.map(
+        arrNoSelf.map(
           (user) => {
             return `<option value=${user.id}>${user.username}</option>`
           }
