@@ -27,7 +27,7 @@ export const newsFormModal = () => {
     <form>
     <h1>Save A New Article</h1>
     <fieldset>
-    <label for="news-title">Article Title:</label>
+    <label for="news-title">Title:</label>
     <input type="text" id="news-title" name="news-title" placeholder="Input article name here">
     </fieldset>
     <fieldset>
