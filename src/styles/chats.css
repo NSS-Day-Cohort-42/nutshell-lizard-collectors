@@ -23,7 +23,7 @@
   align-self: center;
   border: solid black 2px; 
   border-radius: .5rem;
-  overflow: auto
+  overflow: auto;
 }
 .oneMessage {
   display: flex;
