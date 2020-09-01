@@ -4,6 +4,7 @@ import { Nutshell } from "./Nutshell.js"
 import { eventList } from "./events/eventList.js"
 import "./events/eventHTMLConverter.js"
 
+
 const eventHub = document.querySelector(".container")
 eventHub.addEventListener("userAuthenticated", () => Nutshell())
 

@@ -49,6 +49,7 @@ return`
     
     eventHub.addEventListener("click", clickEvent => {
         if (clickEvent.target.id === "saveEvent") {
+            
             const eventName = document.querySelector("#eventForm--name")
             const eventCity = document.querySelector("#eventForm--city")
             const eventState = document.querySelector("#eventForm--state")
@@ -72,6 +73,6 @@ return`
             const [ prompt, eventIdString ] = clickEvent.target.id.split("--") 
     
             deleteEvent(eventIdString)
-            console.log(eventIdString)
+            
         }
     })

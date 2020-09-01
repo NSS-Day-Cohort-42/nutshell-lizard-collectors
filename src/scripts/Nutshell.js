@@ -2,6 +2,7 @@ import { friendList } from "./friends/friendList.js";
 import { newsList } from "./news/newsList.js";
 import { eventList } from "./events/eventList.js";
 import { TaskList } from ".//tasks/taskList.js"
+import { chatList } from "./chat/chatList.js";
 import { weatherList } from "./weather/weatherList.js";
 
 export const Nutshell = () => {
@@ -13,6 +14,7 @@ export const Nutshell = () => {
     newsList()
     eventList()
     TaskList()
+    chatList()
     weatherList()
 
 
