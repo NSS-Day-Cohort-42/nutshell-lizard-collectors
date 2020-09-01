@@ -23,6 +23,8 @@
   width: 90%;
   align-self: center;
   border: solid black 2px;
+  background-color: #ffff;
+  color: #313a61;
 }
 
 .oneFriend {
