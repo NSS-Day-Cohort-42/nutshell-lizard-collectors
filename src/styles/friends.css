@@ -1,7 +1,8 @@
 .friendContainer {
   display: flex;
   flex-direction: column;
-  background-color: slategrey;
+  background-color: #313a61;
+  color: #f6eaf4;
   height: 100%;
 }
 
@@ -22,6 +23,8 @@
   width: 90%;
   align-self: center;
   border: solid black 2px;
+  background-color: #ffff;
+  color: #313a61;
   overflow: auto;
 }
 
