@@ -17,7 +17,7 @@ export const newsHTML = (newsObj) => {
         <p class="news-text">Title: <a href="${ newsObj.url }">${ newsObj.title }</a></p>
         <p class="news-text">Synopsis: ${ newsObj.synopsis }</p>
         <p class="news-user">Saved by: ${ newsObj.user.username }</p>
-        <button class="button" id="deleteArticle--${ newsObj.id }">Delete</button>
+        <button class="delete-news-article" id="deleteArticle--${ newsObj.id }">Delete</button>
     </div>
     `
 }
