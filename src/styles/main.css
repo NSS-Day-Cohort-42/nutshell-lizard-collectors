@@ -13,14 +13,14 @@
 }
 
 .header {
-    border: 2px black solid;
+    /* border: 2px black solid; */
     width: 100%;
     flex: 10%;
 }
 
 .mainContainer {
     display: flex;
-    border: 2px black solid;
+    /* border: 2px black solid; */
     width: 100%;
     flex: 90%;
 }
@@ -33,10 +33,10 @@
 }
 
 .contentLeft--weather {
-    border: 2px black  solid;
+    /* border: 2px black  solid; */
     height: 20%;
     width: 100%;
-    background-color: sandybrown;
+    /* background-color: sandybrown; */
 }
 
 .contentLeft--main {
@@ -47,10 +47,10 @@
 }
 
 .contentLeft--main_tasks {
-    border: 2px black  solid;
+    /* border: 2px black  solid; */
     height: 100%;
     width: 34%;
-    background-color: brown;
+    /* background-color: brown; */
 }
 
 .contentLeft--main__right {
@@ -61,17 +61,17 @@
 }
 
 .contentLeft--main__rightNews {
-    border: 2px black  solid;
+    /* border: 2px black  solid; */
     width: 100%;
     height: 50%;
-    background-color: green;
+    /* background-color: green; */
 }
 
 .contentLeft--main__rightEvents {
-    border: 2px black  solid;
+    /* border: 2px black  solid; */
     width: 100%;
     height: 50%;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 .contentRight {
@@ -82,15 +82,15 @@
 }
 
 .contentRight--friends {
-    border: 2px black solid;
+    /* border: 2px black solid; */
     height: 30%;
-    background-color: purple;
+    /* background-color: purple; */
 }
 
 .contentRight--chats {
-    border: 2px black solid;
+    /* border: 2px black solid; */
     height: 70%;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 /* .auth {

@@ -21,7 +21,8 @@
   width: 90%;
   height: 50%;
   align-self: center;
-  border: solid black 2px; 
+  border: solid black 2px;
+  background-color: rgb(158, 104, 42); 
   border-radius: .5rem;
   overflow: auto;
 }
@@ -38,6 +39,7 @@
 
 .messageEntry {
   margin: 0 .5rem 1rem .5rem;
+  text-emphasis: bold;
 }
 
 .messageOutput {
