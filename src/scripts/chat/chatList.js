@@ -1,7 +1,8 @@
-import { getChats, useChats } from "./chatDataProvider.js";
+import { getChats, useChats, saveMessage } from "./chatDataProvider.js";
 import { messageAsHTML } from "./chatHTMLConverter.js";
 
 const chatContainer = document.querySelector(".contentRight--chats")
+const eventHub = document.querySelector(".container")
 
 let chats = []
 
@@ -28,11 +29,33 @@ const renderChats = () => {
     <div class="messageContainer">
       <div class="messageListHeading">Messages</div>
       <div class="dropMessagesHere">${chatHTML}</div>
-      <input type="text" placeholder="type your message">
+      <input class="messageEntry" type="text" placeholder="type your message">
       <div class="messageButtonContainer">
         <button id="sendMessageButton">Send</button>
       </div>
     </div>
   `
-
 }
+
+// Event listener that refreshes friend list when users or friends update
+eventHub.addEventListener("chatStateChanged", setVarState)
+
+// Event listener to trigger a save event for a new message
+eventHub.addEventListener("click", event => {
+  if (event.target.id === "sendMessageButton") {
+    const currentUser = parseInt(sessionStorage.getItem("activeUser"))
+    let messageContent = document.querySelector(".messageEntry")
+
+    if (messageContent !== "") {
+      const newMessage = {
+        userId: currentUser,
+        message: messageContent.value
+      }
+      saveMessage(newMessage)
+      messageContent=""
+    } else {
+      window.alert("please enter a message before submitting")
+    }
+
+  }
+})

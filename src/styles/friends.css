@@ -25,6 +25,7 @@
   border: solid black 2px;
   background-color: #ffff;
   color: #313a61;
+  overflow: auto;
 }
 
 .oneFriend {
