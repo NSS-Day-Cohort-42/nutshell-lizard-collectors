@@ -15,3 +15,23 @@ export const getChats = () => {
   .then(res => res.json())
   .then(data => chats = data)
 }
+
+export const saveMessage = message => {
+  return fetch("http://localhost:8088/messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(message)
+  })
+  .then(getChats)
+  .then(dispatchStateChange)
+}
+
+export const deleteMessage = (messageId) => {
+  return fetch(`http://localhost:8088/messages/${messageId}`, {
+    method: "DELETE"
+  })
+  .then(getChats)
+  .then(dispatchStateChange)
+}
