@@ -151,7 +151,7 @@ eventHub.addEventListener("click", e => {
    
     addFriend(newFriend)
     const dialog = event.target.parentNode
-    dialog.close()
+    dialog.close
   }
 })
 
@@ -170,7 +170,7 @@ eventHub.addEventListener("click", e => {
     
     deleteFriend(idToDelete)
     const dialog = event.target.parentNode
-    dialog.close()
+    dialog.close
   }
 })
 

@@ -44,12 +44,12 @@ eventHub.addEventListener("chatStateChanged", setVarState)
 eventHub.addEventListener("click", event => {
   if (event.target.id === "sendMessageButton") {
     const currentUser = parseInt(sessionStorage.getItem("activeUser"))
-    const messageContent = document.querySelector(".messageEntry").value
+    let messageContent = document.querySelector(".messageEntry")
 
     if (messageContent !== "") {
       const newMessage = {
         userId: currentUser,
-        message: messageContent
+        message: messageContent.value
       }
       saveMessage(newMessage)
       messageContent=""
