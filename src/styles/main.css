@@ -83,13 +83,13 @@
 
 .contentRight--friends {
     border: 2px black solid;
-    height: 35%;
+    height: 30%;
     background-color: purple;
 }
 
 .contentRight--chats {
     border: 2px black solid;
-    height: 65%;
+    height: 70%;
     background-color: yellow;
 }
 

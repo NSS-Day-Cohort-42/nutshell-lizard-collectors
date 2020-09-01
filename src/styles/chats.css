@@ -1,7 +1,7 @@
 .messageContainer {
   display: flex;
   flex-direction: column;
-  background-color: slateblue;
+  /* background-color: slateblue; */
   height: 100%;
 }
 
@@ -19,9 +19,11 @@
 .dropMessagesHere {
   margin: .5rem;
   width: 90%;
+  height: 50%;
   align-self: center;
   border: solid black 2px; 
   border-radius: .5rem;
+  overflow: auto
 }
 .oneMessage {
   display: flex;
@@ -34,12 +36,26 @@
   padding: 5px;
 }
 
+.messageEntry {
+  margin: 0 .5rem 1rem .5rem;
+}
+
 .messageOutput {
   text-align: left;
-  margin: .25rem 0rem 0rem 1rem;
+  margin: .25rem 1rem .5rem 1rem;
 }
 
 .userOutput {
   text-align: right;
   margin: 0rem 1rem .25rem 0rem;
+}
+
+.lowerChatWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deleteButton {
+  margin-left: 1rem;
+  border-radius: 1rem;
 }

@@ -28,7 +28,7 @@ const renderChats = () => {
     <div class="messageContainer">
       <div class="messageListHeading">Messages</div>
       <div class="dropMessagesHere">${chatHTML}</div>
-      <input type="text" placeholder="type your message">
+      <input class="messageEntry" type="text" placeholder="type your message">
       <div class="messageButtonContainer">
         <button id="sendMessageButton">Send</button>
       </div>
